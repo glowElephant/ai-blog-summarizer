@@ -11,14 +11,13 @@ export default function PostsList() {
 
   return (
     <div>
-      <h1>게시물 목록</h1>
-      <ul>
-        {posts.map(p => (
-          <li key={p.id}>
-            <Link to={`/posts/${p.id}`}>{p.title} - {p.author}</Link>
-          </li>
-        ))}
-      </ul>
+      <h2>게시물 목록</h2>
+      {posts.map(p => (
+        <div className="post-card" key={p.id}>
+          <Link to={`/posts/${p.id}`}>{p.title}</Link>
+          <p className="post-meta">{p.author} / {p.created_at}</p>
+        </div>
+      ))}
     </div>
   );
 }
