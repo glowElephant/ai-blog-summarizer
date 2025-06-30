@@ -1,0 +1,22 @@
+{
+  "name": "ai-blog-summarizer",
+  "version": "1.0.0",
+  "description": "ai blog summary",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
+  }
+}
