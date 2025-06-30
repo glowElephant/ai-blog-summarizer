@@ -22,9 +22,9 @@ export default function PostDetail() {
   if (!post) return <div>Loading...</div>;
 
   return (
-    <div>
-      <h1>{post.title}</h1>
-      <p>작성자: {post.author} / {post.created_at}</p>
+    <div className="post-card">
+      <h2>{post.title}</h2>
+      <p className="post-meta">{post.author} / {post.created_at}</p>
       <p>{post.content}</p>
       <button onClick={handleSummary} disabled={loading}>
         AI 요약 보기
