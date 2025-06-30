@@ -19,4 +19,12 @@ This prototype showcases a small blog system that stores posts in PostgreSQL and
    cd frontend && npm run dev
    ```
 
+## Running tests
+
+Execute Jest tests with:
+
+```bash
+npm test
+```
+
 The app will be available on `http://localhost:5173` and expects the API on port `3001`.

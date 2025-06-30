@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const { Pool } = require('pg');
-const { summarize } = require('node-summary');
+const { summarizeText } = require('./utils');
 const fs = require('fs');
 const path = require('path');
 
@@ -54,12 +54,7 @@ app.post('/api/posts/:id/summarize', async (req, res) => {
 
   const content = result.rows[0].content;
   try {
-    const summary = await new Promise((resolve, reject) => {
-      summarize('', content, (err, summary) => {
-        if (err) reject(err);
-        else resolve(summary.replace(/\n+/g, ' ').split(/(?<=\.)\s+/).slice(0,3).join(' '));
-      });
-    });
+    const summary = summarizeText(content);
     res.json({ summary });
   } catch (e) {
     res.status(500).json({ error: 'Summarization failed' });
